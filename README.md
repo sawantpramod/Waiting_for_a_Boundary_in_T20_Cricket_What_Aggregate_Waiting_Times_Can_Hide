@@ -1,53 +1,26 @@
-# Waiting for a Boundary in T20 Cricket
-What Aggregate Waiting Times Can Hide
+# Waiting for a Boundary in T20 Cricket
 
-## Purpose
-This project reproduces the useful parts of the supplied Jupyter notebook while **never deleting or overwriting the raw ball-by-ball data**.
+## What Aggregate Waiting Times Can Hide—and What They Can't
 
-The notebook's later cells **In [4] and In [5] (Weibull/Log-Logistic model comparison and hazard-model plotting)** are intentionally excluded, as requested.
+This repository contains the complete reproducible code, data, and outputs for the article 
+**"Waiting for a Boundary in T20 Cricket"** - analyzing first-wicket and first-boundary 
+waiting times in IPL 2026.
 
-## Data
-Place the source file at:
-`data/data-ball_by_ball.csv`
+**Article Link**:https://thequantasticjournal.com/waiting-for-a-boundary-in-t20-cricket-74b5addbb7bc
 
-The supplied source file has 17,501 rows and 24 columns.
+---
 
-## Important analytical definitions
-- An **attempt** is one legal delivery.
-- A wicket event is `wicket_flag == True` on a legal delivery.
-- A boundary event is `runs_off_bat` equal to **4 or 6** on a legal delivery.
-- Non-legal deliveries are NOT deleted from the raw dataset. They are excluded only from analyses where the unit of analysis is a legal delivery.
-- Innings with no first event are treated as right-censored for Kaplan–Meier analysis.
+## 📊 Key Findings
 
-## Why this is more reproducible than the notebook
-1. No hard-coded Windows path.
-2. Every script can be rerun from the project root.
-3. Raw rows are preserved.
-4. Derived legal-delivery and all-row enriched files are saved separately.
-5. Input SHA-256 is recorded.
-6. Boolean parsing is explicit and does not incorrectly convert the string "FALSE" to True.
-7. Analysis definitions are written in code.
-8. Outputs are saved to stable folders.
+| Result | Value | Significance |
+|--------|-------|--------------|
+| Boundary waiting times departure | p = 0.0420 | ✅ Statistically significant at 5% |
+| Wicket waiting times | p = 0.5737 | ❌ Not significant |
+| Early negative gaps (3 of 4) | m=2, m=5 | Cannot be explained by simple heterogeneity |
+| Powerplay boundary rate | 26.80% | Descriptive |
+| Median first boundary | Ball 4 | Descriptive |
+| Median first wicket | Ball 17 | Descriptive |
 
-## Run
-Create a virtual environment, install:
-`pip install -r requirements.txt`
+---
 
-Then:
-`python src/07_run_all.py`
-
-## Outputs
-- `outputs/tables/data_validation_summary.csv`
-- `outputs/tables/ball_by_ball_enriched_all_rows.csv`
-- `outputs/tables/legal_deliveries_prepared.csv`
-- `outputs/tables/innings_survival_dataset.csv`
-- `outputs/tables/geometric_baseline_summary.csv`
-- `outputs/tables/km_first_wicket_survival.csv`
-- `outputs/tables/km_first_boundary_survival.csv`
-- `outputs/tables/memoryless_comparison.csv`
-- `outputs/tables/first_event_phase_summary.csv`
-- `outputs/tables/phase_chi_square.csv`
-- `outputs/figures/kaplan_meier_wicket_boundary.png`
-
-## Reproducibility / publication note
-The raw file remains the source of truth. Every filtering step creates a new derived object/file. Therefore, saying "legal deliveries were used" does not mean non-legal observations were deleted from the dataset.
+## 📁 Repository Structure
