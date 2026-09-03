@@ -1,5 +1,4 @@
-
-(venv) C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible>python scripts\10_run_all.py
+(venv) C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts>python 10_run_all.py
 ================================================================================
 RUNNING ALL SCRIPTS IN SEQUENCE
 ================================================================================
@@ -7,8 +6,8 @@ RUNNING ALL SCRIPTS IN SEQUENCE
 ================================================================================
 RUNNING 01_validate_and_prepare.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === DATA VALIDATION / INTEGRITY ===
 raw_rows: 17501
@@ -22,8 +21,8 @@ legal_boundary_rows: 3740
 matches: 73
 innings: 146
 raw_sha256: f0d43ace280af92a49fceacc6b6af43d3b2b40853aa5dbc4d8de1dc02f6e7855
-Saved ALL rows: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\ball_by_ball_enriched_all_rows.csv
-Saved legal-delivery analysis view: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\legal_deliveries_prepared.csv
+Saved ALL rows: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\ball_by_ball_enriched_all_rows.csv
+Saved legal-delivery analysis view: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\legal_deliveries_prepared.csv
 RAW DATA IS NOT DELETED OR OVERWRITTEN.
 
 SUCCESS: 01_validate_and_prepare.py completed.
@@ -31,8 +30,8 @@ SUCCESS: 01_validate_and_prepare.py completed.
 ================================================================================
 RUNNING 01b_powerplay_analysis.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 
 ======================================================================
@@ -61,16 +60,43 @@ T20 Powerplay (overs 1-6) boundary rate: 26.80%
   This uses T20 powerplay: overs 1-6 (over_no 0-5)
 ======================================================================
 
-[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\powerplay_analysis_results.csv
-[OK] Summary saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\powerplay_analysis_summary.txt
+[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\powerplay_analysis_results.csv
+[OK] Summary saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\powerplay_analysis_summary.txt
 
 SUCCESS: 01b_powerplay_analysis.py completed.
 
 ================================================================================
+RUNNING 01c_illegal_delivery_check.py
+================================================================================
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
+[DEBUG] DATA_FILE exists: True
+[OK] Saved: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\illegal_delivery_first_event_check.csv
+[OK] Saved: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\illegal_delivery_first_event_summary.csv
+
+=== ILLEGAL-DELIVERY FIRST-EVENT CHECK ===
+ total_innings  wickets_on_illegal_deliveries_total  boundary_value_shots_on_illegal_deliveries_total  innings_where_legal_only_first_wicket_is_wrong  innings_where_legal_only_first_boundary_is_wrong
+           146                                    5                                                17                                               1                                                 1
+
+Innings where the legal-only 'first wicket' is not the true first wicket:
+ match_id  innings_no  first_wicket_legal_only_attempt_recorded
+   151913           2                                        98
+
+Innings where the legal-only 'first boundary' is not the true first boundary:
+ match_id  innings_no  first_boundary_legal_only_attempt_recorded
+   151878           1                                           9
+
+NOTE: This script does not change first_wicket_attempt / first_boundary_attempt
+anywhere else in the pipeline. It only verifies and quantifies how many innings
+are affected by the legal-only event definition, for transparent disclosure.
+
+SUCCESS: 01c_illegal_delivery_check.py completed.
+
+================================================================================
 RUNNING 02_build_innings.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === INNINGS-LEVEL FIRST-EVENT DATA ===
 Innings analysed: 146
@@ -85,8 +111,8 @@ SUCCESS: 02_build_innings.py completed.
 ================================================================================
 RUNNING 03_geometric_baseline.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === GEOMETRIC BASELINE ===
          event  legal_deliveries  event_count  p_hat_naive_per_ball  naive_theoretical_mean_1_over_p_hat  uncensored_first_event_mean  p_mle_fit_to_waits  censored_innings
@@ -102,8 +128,8 @@ SUCCESS: 03_geometric_baseline.py completed.
 ================================================================================
 RUNNING 04_kaplan_meier.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === KAPLAN–MEIER ===
 Median first wicket: 17.0
@@ -114,8 +140,8 @@ SUCCESS: 04_kaplan_meier.py completed.
 ================================================================================
 RUNNING 05_memoryless_property.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === MEMORYLESS-PROPERTY DIAGNOSTIC ===
          event  m  n  conditional_survival_S_m+n_over_S_m  unconditional_survival_S_n  difference
@@ -204,8 +230,8 @@ SUCCESS: 05_memoryless_property.py completed.
 ================================================================================
 RUNNING 06_phase_analysis.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 === PHASE-WISE PROBABILITIES ===
       phase  legal_balls  p_wicket  p_boundary
@@ -218,8 +244,8 @@ SUCCESS: 06_phase_analysis.py completed.
 ================================================================================
 RUNNING 07_bootstrap_m10_analysis.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 [OK] Loaded innings data: 146 innings
 ======================================================================
@@ -298,15 +324,15 @@ CONSISTENCY CHECK
   The empirical and theoretical quantities now test the SAME event (boundary on ball m).
 ======================================================================
 
-[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\bootstrap_m10_results.csv
+[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\bootstrap_m10_results.csv
 
 SUCCESS: 07_bootstrap_m10_analysis.py completed.
 
 ================================================================================
 RUNNING 08_stratification_analysis.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 [OK] Loaded innings data: 146 innings
 [OK] Loaded ball-by-ball data: 16639 deliveries
@@ -379,17 +405,17 @@ sample size.
 The tercile result itself has essentially no power to confirm or
 rule out anything. 'Not rejected' here is close to uninformative.
 
-[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\stratification_boundary_results.csv
+[OK] Results saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\stratification_boundary_results.csv
 
-[OK] Summary saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts\outputs\tables\stratification_summary_boundary.csv
+[OK] Summary saved to: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\stratification_summary_boundary.csv
 
 SUCCESS: 08_stratification_analysis.py completed.
 
 ================================================================================
 RUNNING 09_mixture_simulation_check.py
 ================================================================================
-[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\Scripts
-[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible\data\data-ball_by_ball.csv
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
 [DEBUG] DATA_FILE exists: True
 ======================================================================
 MIXTURE SIMULATION CHECK
@@ -452,7 +478,46 @@ therefore not explained by simple innings-level rate heterogeneity.
 SUCCESS: 09_mixture_simulation_check.py completed.
 
 ================================================================================
+RUNNING 09b_parametric_bootstrap_gof.py
+================================================================================
+[DEBUG] ROOT: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts
+[DEBUG] DATA_FILE: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\data\data-ball_by_ball.csv
+[DEBUG] DATA_FILE exists: True
+======================================================================
+PARAMETRIC BOOTSTRAP CALIBRATION OF THE CHI-SQUARE GOF TEST
+======================================================================
+n_simulations = 20000, seed = 42
+
+BOUNDARIES (primary result -- Comment 8/9):
+  n innings (observed events): 146
+  p_mle (fit to observed waits): 0.232114
+  Observed chi2 statistic: 14.6638, df: 7
+  Naive chi2(df) p-value (lower bound):        0.0406
+  Chernoff-Lehmann chi2(df+1) p-value (upper):  0.0660
+  Parametric bootstrap empirical p-value (n_sim=20000): 0.0420
+  df distribution across replicates: {7: 15111, 6: 4728, 8: 158, 5: 3}
+
+WICKETS (included for completeness only):
+  n innings (observed events): 146
+  p_mle (fit to observed waits): 0.043713
+  Observed chi2 statistic: 4.3516, df: 5
+  Naive chi2(df) p-value (lower bound):        0.5000
+  Chernoff-Lehmann chi2(df+1) p-value (upper):  0.6292
+  Parametric bootstrap empirical p-value (n_sim=20000): 0.5737
+  df distribution across replicates: {5: 5767, 6: 4833, 4: 4198, 3: 2002, 7: 1994, 2: 988, 8: 214, 9: 4}
+
+======================================================================
+INTERPRETATION
+======================================================================
+Boundary bootstrap p = 0.0420 < 0.05 -> the departure from the geometric
+model is significant at the 5% level on the calibrated test (retain the
+significance claim per Comment 9).
+
+Saved: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\parametric_bootstrap_gof_boundary.csv
+Saved: C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\GitHub_Repository_Complete\Scripts\outputs\tables\parametric_bootstrap_gof_wicket.csv
+
+SUCCESS: 09b_parametric_bootstrap_gof.py completed.
+
+================================================================================
 ALL SCRIPTS COMPLETED
 ================================================================================
-
-(venv) C:\Users\admin\Desktop\Medium.Com\M1\Geometric distribution\Reproducible>
